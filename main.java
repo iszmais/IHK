@@ -13,8 +13,8 @@ public class main {
 		
 		String file = "";
 
-		//BufferedReader reader =new BufferedReader(new InputStreamReader(System.in));
-		file = "FlächeAlle";//reader.readLine();
+		BufferedReader reader =new BufferedReader(new InputStreamReader(System.in));
+		file = reader.readLine();
 		
 		InputReader input = new InputReader();
 		Karte map = input.readFile("src/assets/"+file);
