@@ -30,17 +30,14 @@ public class InputReader implements InputReaderInterface{
 					  name = st;
 				  }else {
 					  if(Character.isDigit(st.charAt(st.length() - 1))) {
-						  
 						  String[] parts = st.split("\\s+");
 						  String kürzel = parts[0];
 						  double rad = Math.sqrt(Double.parseDouble(parts[1])/Math.PI);
 						  double[] coord = {Double.parseDouble(parts[2]),Double.parseDouble(parts[3])};
-						  
 						  staaten.add(new Staat(i, kürzel, rad, coord));
 						  i++;
 					  }else {
 						  String[] parts = st.split("\\s+");
-
 						  Staat staat1 = null;
 						  for(int j = 0; j < staaten.size(); j++) {
 							  if(parts[0].equals(staaten.get(j).getKürzel()+":")) {
@@ -48,7 +45,6 @@ public class InputReader implements InputReaderInterface{
 								  break;
 							  }
 						  }
-
 						  if(staat1 != null) {
 							  for(int j = 1; j < parts.length; j++) {
 								  for(int k = 0; k < staaten.size(); k++) {
@@ -68,13 +64,8 @@ public class InputReader implements InputReaderInterface{
 		}
 		br.close();
 
-		Iteration firstIteration = new Iteration(
-				staaten.toArray(new Staat[staaten.size()]),
-				nachbarschaften.toArray(new Nachbarschaft[nachbarschaften.size()])
-		);
-
+		Iteration firstIteration = new Iteration(staaten.toArray(new Staat[staaten.size()]),nachbarschaften.toArray(new Nachbarschaft[nachbarschaften.size()]));
 		Karte karte = new Karte(name);
-		
 		karte.addIteration(firstIteration);
 		return karte;
 	}

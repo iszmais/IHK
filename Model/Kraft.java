@@ -11,8 +11,6 @@ public class Kraft {
 		this.vektor = vektor;
 	}
 	
-
-	
 	public Kraft(Staat staat, double x, double y) {
 		this.staat = staat;
 		double[] vektor = {x,y};

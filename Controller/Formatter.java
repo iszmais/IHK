@@ -21,7 +21,6 @@ public class Formatter implements FormatterInterface{
 			double x = iteration.getStaaten()[i].getKoordinaten()[0];
 			double y = iteration.getStaaten()[i].getKoordinaten()[1];
 			double rad = iteration.getStaaten()[i].getRadius();
-			
 			if(x - rad < window[0]) {
 				window[0] = x - rad;
 			}
